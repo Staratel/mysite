@@ -1,7 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from .serializer import UserSerializer, UserSerializeDetails
+from rest_framework import generics
 from .forms import UserForm
+
+
+class UserList(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetails(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializeDetails
 
 
 def index(request):
