@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Title </title>
+  </head>
+  <body>
+    <div align="center">
+      <form method="post" action="{% url 'registration' %}" >
+        {% csrf_token %}
+        <h3> SIGN UP </h3>
+          {{ form }}
+        <div class="form-group">
+          <input type="submit" value="SIGN UP">
+        </div>
+        {% if invalid%}
+        <p> This username is already taken! Please choose another!</p>
+          <p> Это имя уже используется! Пожалуйста, выберете свободное имя</p>
+        {% endif %}
+        {% if invalid_input%}
+        <p>Неверно введенны данные!</p>
+        {% endif %}
+      </form>
+    </div>
+  </body>
+</html>
