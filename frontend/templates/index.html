@@ -9,14 +9,13 @@
   </head>
   <body onload="getUser({{user.id}})">
      <main>
-
-      <div align='center'>
-        <h3> Welcome, <div id="user">%user%!</div> </h3>
-        <div class="logout"><a href="/logout">LOGOUT</a></div>
-        <h3>You have <div id="data">%coins%</div> coins </h3>
-        <h3> Your click power is <div id="clickPower">{{mainCycle.clickPower}}</div> </h3>
-        <h3> Your auto click power is <div id="autoClickPower"> {{mainCycle.autoClickPower}} </div> coins per second </h3>
-        <input type="image" class="hdd" src="{% static 'images/hdd.png' %}" onclick="callClick()" />
+      <div>
+        <h3> Здравствуй, <div id="user">%user%!</div> </h3>
+        <div class="logout"><a href="/logout">Выход</a></div>
+        <h1> У тебя есть <div id="data">%coins%</div> байт</h1>
+        <h3> Байт за клик <div id="clickPower">{{mainCycle.clickPower}}</div> </h3>
+        <h3> Уровень майнера: <div id="autoClickPower"> {{mainCycle.autoClickPower}} </div> байт в секунду </h3>
+        <div class="buttom"><input type="image" class="hdd" src="{% static 'images/hdd.png' %}" onclick="callClick()" /></div>
         <div class="boost-wrapper" id="boost-wrapper">
 
         </div>

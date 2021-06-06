@@ -72,15 +72,23 @@ function render_all_boosts(boosts){
 }
 
 function render_boost(parent, boost){
+  let boost_class = 'boost-holder'
+  let boost_img = "https://www.pinclipart.com/picdir/big/72-720521_get-notified-of-exclusive-freebies-computer-chip-clipart.png"
+  if (boost.level % 3 == 0){
+      boost_class = 'auto-boost'
+      boost_img = "https://w7.pngwing.com/pngs/814/843/png-transparent-usb-flash-drives-computer-icons-usb-flash-electronics-computer-usb-flash-drive.png"
+  }
   const div = document.createElement('div')
   div.setAttribute('class', 'boost-holder')
   div.setAttribute('id', `boost-holder-${boost.level}`)
   div.innerHTML = `
-  <div class="boost-holder" id="boost-holder">
-    <input id="buy" type="image" class="hdd boost" src="https://voronezh.migmar.ru/wp-content/uploads/2019/12/avtotovary.png" onclick="buyBoost(${boost.level})" />
+  <div class=${boost_class} id="boost-holder">
+
     <p> Level: <div id="boostLevel"> ${boost.level} </div> </p>
+    <input id="buy" type="image" class="button boost" src=${boost_img} onclick="buyBoost(${boost.level})">
     <p> Power: <div id="boostPower"> ${boost.power} </div></p>
     <p> Price: <div id="boostPrice"> ${boost.price} </div></p>
+    </input>
   </div>
   `
   parent.appendChild(div)

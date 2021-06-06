@@ -16,7 +16,7 @@ class MainCycle(models.Model):
         return self.check_level()
 
     def check_level(self):
-        if self.coinsCount > (self.level ** 2 + 1) * 1000:
+        if self.coinsCount > (self.level ** 2 + 1) * 100:
             self.level += 1
             boost_type = 1
             if self.level % 3 == 0:

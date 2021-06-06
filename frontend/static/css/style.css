@@ -1,3 +1,7 @@
+body {
+background: #CDDDDD;
+}
+
 .hdd{
     height: 100px;
   opacity: 0.7;
@@ -9,6 +13,11 @@
 
 .hdd:active{
   opacity: 1;
+}
+
+.buttom {
+    display: block;
+    height: 100px;
 }
 
 .boost{
@@ -27,21 +36,23 @@
 .boost-holder{
   width: 200px;
   height: 200px;
-  background: burlywood;
+  margin: 10px;
+  white-space: nowrap;
+  background: #ACBDBA;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 25px;
 }
 
 .auto-boost{
-  background: darkred;
-  width: 170px;
+  background: #A30000;
+  width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 25px;
 }
